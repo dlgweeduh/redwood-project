@@ -4,13 +4,21 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
-
-$gray-medium-light: #eaeaea;
+$orange: #f37321;
+$green: #f3a521;
+$transpgray: rgba(0,0,0,0.7);
+$light: 300;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+}
+
+/*~not sure if this is the right use of a mixin*/
+@mixin selection {
+  background: #404040;
+  color: #FFF;  
 }
 
 /* universal */
@@ -21,6 +29,7 @@ html {
 
 body {
   padding-top: 60px;
+  font-family: 'Lato', sans-serif;
 }
 
 section {
@@ -32,7 +41,7 @@ textarea {
 }
 
 .center {
-  text-align: center;
+  text-align: center;  
   h1 {
     margin-bottom: 10px;
   }
@@ -52,10 +61,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -63,8 +70,14 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  text-align: justify;
 }
-
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 /* header */
 
@@ -76,12 +89,84 @@ p {
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
   }
 }
+.navbar {
+  background-color: $transpgray;
+  border: none;
+  li a {
+    color: white;
+    font-weight: $light;
+    transition: all 0.2s ease;
+    -webkit-transition:background 0.2s ease;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.btn {
+  background-color: $orange;
+  border: 1px solid $green;
+  transition: all 0.2s ease;
+  -webkit-transition:background 0.2s ease;
+  &:hover{
+    background-color: $green;
+    border: 1px solid $green;
+  }
+}
+
+
+/* backgrounds */
+
+.studentPerspective {
+  background-image: url("http://redwood-images.s3.amazonaws.com/student-perspective.jpg");
+  background-size: cover;
+  text-align: center;
+  top: 0;
+  min-height: 700px;
+  width: 100%;
+}
+
+
+
+.studentPerspective {
+  color: white;
+  .form {
+    background-color: rgba(0,0,0,0.6);
+    padding: 2rem;
+    font-weight: $light;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* footer */
 
@@ -100,14 +185,23 @@ footer {
     float: left;
   }
   ul {
+    margin: 1em 0;
     float: right;
     list-style: none;
     li {
-      float: left;
       margin-left: 15px;
+      display: block;
     }
   }
 }
+
+.socialIcon {
+  float: left;
+  img{
+    width: 4em;
+  }
+}
+
 
 /* sidebar */
 
@@ -182,3 +276,8 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+/*~~~~~~~~*/
+
+
