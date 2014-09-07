@@ -1,6 +1,8 @@
 # StaticPagesController is a Ruby class, but because it inherits from ApplicationController the behavior of its methods is specific to Rails: when visiting the URL /static_pages/home, Rails looks in the Static Pages controller and executes the code in the home action, and then renders the view (the V in MVC from Section 1.3.3) corresponding to the action. In the present case, the home action is empty, so all visiting /static_pages/home does is render the view.
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root 'static_pages#home'
   get 'about'    => 'static_pages#about'
   get 'school'   => 'static_pages#school'
@@ -9,7 +11,10 @@ Rails.application.routes.draw do
   get 'blog' => 'static_pages#blog'  
   get 'contact' => 'static_pages#contact'
   get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  delete 'logout' => 'sessions#destroy'
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
