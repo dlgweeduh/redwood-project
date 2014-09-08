@@ -74,8 +74,10 @@ p {
 }
 a {
   text-decoration: none;
+  color:$orange;
   &:hover {
     text-decoration: none;
+    color: $green;
   }
 }
 
