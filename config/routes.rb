@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   delete 'logout' => 'sessions#destroy'
+  delete 'close'    => 'sessions#end_session' if Rails.env.test?
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
