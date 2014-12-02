@@ -1,11 +1,11 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "foundation/components/top-bar";
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-$orange: #f37321;
-$green: #f3a521;
+
+$blue:rgba(134, 196, 208, 0.9); //#85c3cf
+$red: rgba(232,110, 52, 0.9); //#e76e33 
+$yellow: rgba(194, 203, 32, 0.9); //#c2ca20
 $transpgray: rgba(0,0,0,0.7);
 $light: 300;
 
@@ -64,7 +64,6 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 30px;
   font-weight: normal;
-  color: $gray-light;
 }
 
 p {
@@ -74,53 +73,65 @@ p {
 }
 a {
   text-decoration: none;
-  color:$orange;
+  color:$red;
   &:hover {
     text-decoration: none;
-    color: $green;
+    color: $yellow;
   }
 }
+
+
 
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   &:hover {
-    color: white;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    -webkit-transition:background 0.2s ease;
     text-decoration: none;
   }
 }
-.navbar {
-  background-color: $transpgray;
+
+.contain-to-grid {
+  background-color: $yellow;
+}
+
+$topbar-bg: $red;
+
+
+
+.top-bar {
   border: none;
+  
   li a {
     color: white;
     font-weight: $light;
     transition: all 0.2s ease;
     -webkit-transition:background 0.2s ease;
     &:hover {
-      color: $orange;
+      color: $red;
     }
   }
  .dropdown-menu {
-  background-color: $green;
+  background-color: $yellow;
  } 
 }
 
 .btn {
-  background-color: $orange;
-  border: 1px solid $green;
+  background-color: $red;
+  border: 1px solid $yellow;
   transition: all 0.2s ease;
   -webkit-transition:background 0.2s ease;
   &:hover{
-    background-color: $green;
-    border: 1px solid $green;
+    background-color: $yellow;
+    border: 1px solid $yellow;
   }
 }
 
@@ -130,7 +141,8 @@ a {
   height: 100%;
   background-repeat: no-repeat no-repeat;
   background-position: 0 0;
-  background-image: url(image-path('redwoods.jpg'));
+  background-color: gray;
+  // background-image: url(image-path('redwoods.jpg'));
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -140,39 +152,16 @@ a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  border-top: 1px solid $red;
   a {
-    color: $gray;
+    color: gray;
     &:hover {
-      color: $gray-darker;
+      color: gray;
     }
   }
   small {
@@ -255,12 +244,12 @@ input {
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
+// .field_with_errors {
+//   @extend .has-error;
+//   .form-control {
+//     color: $state-danger-text;
+//   }
+// }
 /* miscellaneous */
 
 .debug_dump {
