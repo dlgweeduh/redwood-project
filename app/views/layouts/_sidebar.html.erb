@@ -1,16 +1,38 @@
-<!-- Navigation -->
-<nav id="slide-menu">
-	<ul>
-		<li class="timeline">Today</li>
-		<li class="events">Values Challenge</li>
-		<li class="calendar">Redwood Project Profile</li>
-		<li class="sep settings">Settings</li>
-		<li class="logout">Logout</li>
-	</ul>
-</nav>
-<!-- Content panel -->
-<div id="content">
-	<div class="menu-trigger"></div>
-	<h1><%= @user.name %>'s Redwood Project</h1>
-	<h3>Growing Big starts here.</h3>
-</div>
+	<header>
+		<a id="cd-logo" href="#0"><img src="images/redwoodLogo.png" alt="Homepage"></a>
+		<nav id="cd-top-nav">
+			<ul>
+				<li><a href="#0">Logout</a></li>
+			</ul>
+		</nav>
+		<a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
+	</header>
+	<main class="cd-main-content">
+
+	</main> <!-- cd-main-content -->
+	<nav id="cd-lateral-nav">
+		<ul class="cd-navigation">
+			<li class="item-has-children">
+				<a href="#0">Values Challenge</a>
+				<ul class="sub-menu">
+					<li><a href="#0">Values Challenge</a></li>
+				</ul>
+			</li> <!-- item-has-children -->
+
+			<li class="item-has-children">
+				<a href="#0"></a>
+				<ul class="sub-menu">
+					<li><a href="#0">VC 1</a></li>
+					<li><a href="#0">VC 1</a></li>
+				</ul>
+			</li> <!-- item-has-children -->
+		</ul> <!-- cd-navigation -->
+
+
+		<div class="cd-navigation socials">
+			<a class="cd-twitter cd-img-replace" href="#0">Twitter</a>
+			<a class="cd-github cd-img-replace" href="#0">Git Hub</a>
+			<a class="cd-facebook cd-img-replace" href="#0">Facebook</a>
+			<a class="cd-google cd-img-replace" href="#0">Google Plus</a>
+		</div> <!-- socials -->
+	</nav>

@@ -1,4 +1,6 @@
 <%= render 'layouts/sidebar' %>  
+
+
 <div class="container">
 	<div class="row">
 		<% provide(:title, @user.name) %>
@@ -6,7 +8,7 @@
 	    <section class="user_info">
 	      <h1>
 	        <%= gravatar_for @user %>
-	        <%= @user.name %>
+	        <%= @user.name %>'s Redwood Project
 	      </h1>
 	    </section>
 	  </aside>

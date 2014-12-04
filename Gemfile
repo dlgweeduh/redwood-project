@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '4.1.5'
+gem 'bourbon'
 gem 'bcrypt',       '3.1.7'
 gem 'foundation-rails'
 gem 'uglifier',     '2.5.1'
