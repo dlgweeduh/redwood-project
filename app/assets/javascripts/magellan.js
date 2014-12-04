@@ -5,6 +5,5 @@ $(document).foundation({
   destination_threshold: 20, // pixels from the top of destination for it to be considered active
   throttle_delay: 50, // calculation throttling to increase framerate
   fixed_top: 45	, // top distance in pixels assigned to the fixed element on scroll
-  color: 'blue',
 }
 });

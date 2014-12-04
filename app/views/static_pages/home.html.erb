@@ -2,17 +2,31 @@
 <section class="landing">
 	<div class="center">
 	 
-	  	<h1><%= link_to "growBig", signup_path, class: "" %></h1>
-	  	<h2>Redwood Project for</h2>
+	  	<h1><%= link_to "growBig", signup_path, class: "header" %></h1>
+	  	<h2></h2>
 
-	  <%= link_to "Schools", signup_path, class: "button success" %>
-	  <%= link_to "Businesses", signup_path, class: "button success" %>
-	  <%= link_to "Individuals", signup_path, class: "button success" %>    
-	</div>w
+	<div data-magellan-expedition="fixed">
+	<!--     <dd data-magellan-arrival="build"><a href="#build"></a></dd>
+	 --><dd data-magellan-arrival="js">	  
+		    	<%= link_to "Businesses", business_path, class: "navbar-btn link" %>
+				<%= link_to "Schools", school_path, class: "navbar-btn link", id: "middle" %>
+				<%= link_to "Individuals", individual_path, class: "navbar-btn link" %>	
+		</dd>
+	</div>
+
+<!-- 		<div class="contain-to-grid sticky">
+		  <nav class="" data-topbar role="navigation" data-options="sticky_on: large">
+	    	<%= link_to "Businesses", business_path, class: "navbar-btn" %>
+			<%= link_to "Schools", school_path, class: "navbar-btn" %>
+			<%= link_to "Individuals", individual_path, class: "navbar-btn" %>			    
+		  </nav>
+		</div> -->
+		   
+	</div>
 	
 	<div class="container">
 		<div class="row">	
-			<div class="col-sm-12">
+			<div class="large-12 columns">
 				<h3> 
 					  A framework of specific challenges and interactive personal inquiries designed to foster essential leadership skills.
 				</h3>
@@ -21,12 +35,7 @@
 	</div>
 </section>
 
-<div data-magellan-expedition="fixed">
-  <dl class="sub-nav">
-    <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
-    <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
-  </dl>
-</div>
+
 
 </div>
 	<div class="container">

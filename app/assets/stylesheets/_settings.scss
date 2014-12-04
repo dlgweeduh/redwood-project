@@ -9,6 +9,8 @@ $red: #e76e33;
 $blue: #85c3cf;
 $yellow: #c2ca20;
 $white: #ffffff;
+$black: #404040;
+
 
 $topbar-bg-color: $white-transp !default;
 $topbar-bg: $topbar-bg-color !default;
@@ -19,28 +21,28 @@ $topbar-dropdown-toggle-alpha: 0.4 !default;
 
 // Height and margin
 $topbar-height: 45px !default;
-$topbar-margin-bottom: 0 !default;
+$topbar-margin-bottom: 10 !default;
 
 // Transitions and breakpoint styles
 $topbar-transition-speed: 300ms !default;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $red !default;
+$topbar-link-color: $black !default;
 $topbar-link-color-hover: $red !default;
-$topbar-link-color-active: $red !default;
+$topbar-link-color-active: $black !default;
 $topbar-link-color-active-hover: $red !default;
-$topbar-link-bg-active: $white-transp !default;
+$topbar-link-bg-active: $clear !default;
 $topbar-link-bg-active-hover: scale-color($white-transp, $lightness: -14%) !default;
 $topbar-link-hover-lightness: -10% !default; // Darken by 10%
 
-$topbar-link-bg: $topbar-bg !default;
-$topbar-link-bg-hover: $white-transp !default;
-$topbar-link-bg-color-hover: $white-transp !default;
-$topbar-link-bg-active: $white-transp !default;
+$topbar-link-bg: $clear !default;
+$topbar-link-bg-hover: $clear !default;
+$topbar-link-bg-color-hover: $clear !default;
+$topbar-link-bg-active: $clear !default;
 
 // Top menu icon styles
-$topbar-menu-link-color: $red !default;
-$topbar-menu-icon-color: $red !default;
+$topbar-menu-link-color: $black !default;
+$topbar-menu-icon-color: $black !default;
 
 
 // Style the top bar dropdown elements
@@ -52,6 +54,6 @@ $topbar-dropdown-toggle-color: $white !default;
 $topbar-dropdown-toggle-alpha: 0.4 !default;
 
 
-$magellan-bg: $white-transp;
-$magellan-padding: 0 !important;
+$magellan-bg: $clear;
+$magellan-padding: 10 !important;
 

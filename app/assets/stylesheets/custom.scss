@@ -1,5 +1,14 @@
-@import 'settings';
 /* mixins, variables, etc. */
+
+$light: 300;
+$heavy: 700;
+$regular: 400;
+
+$primary-font: 'Lato';
+$qs-regular: 'Quicksand';
+$qs-light: 'Quicksand';
+$qs-bold: 'Quicksand';  
+
 $red-transp: rgba(232,110, 52, 0.9); //#e76e33 
 $blue-transp:rgba(134, 196, 208, 0.9); //#85c3cf
 $yellow-transp: rgba(194, 203, 32, 0.9); //#c2ca20
@@ -7,9 +16,15 @@ $yellow-transp: rgba(194, 203, 32, 0.9); //#c2ca20
 $red: #e76e33;
 $blue: #85c3cf;
 $yellow: #c2ca20;
+$white: #fff;
+$black: #404040;
+$clear: rgba(0,0,0,0);
 
 $transpgray: rgba(0,0,0,0.7);
-$light: 300;
+
+
+$space: 2.7em; 
+$fast: color 0.1s ease;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -17,10 +32,23 @@ $light: 300;
   box-sizing:         border-box;
 }
 
-/*~not sure if this is the right use of a mixin*/
 @mixin selection {
   background: #404040;
   color: #FFF;  
+}
+
+@mixin transition($fast) {
+  -webkit-transition: $fast;
+  -moz-transition: $fast;
+  -ms-transition: $fast;
+  -o-transition: $fast;
+  transition: $fast;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
 }
 
 /* universal */
@@ -31,7 +59,7 @@ html {
 
 body {
   padding-top: 60px;
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font, sans-serif;
 }
 
 section {
@@ -57,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -70,16 +98,30 @@ h2 {
 
 p {
   font-size: 1.1em;
-  line-height: 1.7em;
+  line-height: $space;
   text-align: justify;
 }
 a {
   text-decoration: none;
   color:$red;
+  font-weight: 300;
   &:hover {
     text-decoration: none;
     color: $yellow;
   }
+}
+
+
+/* Headers Styles */
+
+.header {
+  color: $white;
+  font-family: $qs-bold;
+  font-weight: $regular;
+  padding: 20px;
+}
+.link {
+
 }
 
 
@@ -95,49 +137,49 @@ a {
   padding-top: 9px;
   &:hover {
     opacity: 0.8;
-    transition: all 0.2s ease;
-    -webkit-transition:background 0.2s ease;
-    text-decoration: none;
+    @include transition($fast);
   }
 }
 
-.contain-to-grid {
-  background-color: $yellow;
+
+
+.top-bar-section .right a {
+  border: none;
+  background: $clear;
+  font-weight: $light;
+  font-family: $qs-regular;
+  font-weight: $light;  
 }
 
-// Background color for the top bar
-$red: rgba(232,110, 52, 0.9); //#e76e33 
-$topbar-bg-color: $red !default;
-$topbar-bg: $topbar-bg-color !default;
-
-
-
 .top-bar {
-  border: none;
-  
   li a {
     color: white;
     font-weight: $light;
-    transition: all 0.2s ease;
-    -webkit-transition:background 0.2s ease;
+    font-family: $qs-regular;
+    font-weight: $light;
+    @include transition($fast);
     &:hover {
       color: $red;
     }
   }
  .dropdown-menu {
-  background-color: $yellow;
  } 
 }
 
-.btn {
-  background-color: $red;
-  border: 1px solid $yellow;
-  transition: all 0.2s ease;
-  -webkit-transition:background 0.2s ease;
+.navbar-btn {
+  color: $white;
+  padding: 10px;
+  line-height: $space;
+  font-family: $qs-regular;
+  font-weight: $light;
+  @include transition($fast);
   &:hover{
-    background-color: $yellow;
-    border: 1px solid $yellow;
+    @include opacity(0.8);
   }
+}
+#middle {
+  border-left: 3px solid $white;
+  border-right: 3px solid $white;
 }
 
 .landing {
@@ -146,7 +188,7 @@ $topbar-bg: $topbar-bg-color !default;
   height: 100%;
   background-repeat: no-repeat no-repeat;
   background-position: 0 0;
-  background-color: gray;
+  background-color: $transpgray;
   // background-image: url(image-path('redwoods.jpg'));
   -webkit-background-size: cover;
   -moz-background-size: cover;
