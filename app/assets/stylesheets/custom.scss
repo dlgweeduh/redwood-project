@@ -1,4 +1,17 @@
 /* mixins, variables, etc. */
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,700')
+
+
+body {
+  font-family: 'Quicksand', serif;
+}
+
+
+$font-thin: 300; 
+$primary-font: 'Lato';
+$qs-regular: 'Quicksand';
+$qs-light: 'Quicksand';
+$qs-bold: 'Quicksand';  
 
 $light: 300;
 $heavy: 700;
