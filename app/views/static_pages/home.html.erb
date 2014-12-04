@@ -1,38 +1,44 @@
 <%= render 'layouts/header' %>  
 <section class="landing">
 	<div class="center">
-	 
-	  	<h1><%= link_to "growBig", signup_path, class: "header" %></h1>
-	  	<h2></h2>
 
-	<div data-magellan-expedition="fixed">
-	<!--     <dd data-magellan-arrival="build"><a href="#build"></a></dd>
-	 --><dd data-magellan-arrival="js">	  
-		    	<%= link_to "Businesses", business_path, class: "navbar-btn link" %>
-				<%= link_to "Schools", school_path, class: "navbar-btn link", id: "middle" %>
-				<%= link_to "Individuals", individual_path, class: "navbar-btn link" %>	
-		</dd>
-	</div>
+			<div class="landing-video">	
+<!-- 				<div class="flex-video"> -->
+					<video class="redwood-roman" autoplay="true" muted muted="true" muted="muted">
+					    <source src="http://redwood-videos.s3.amazonaws.com/redwood-roman-fogg.webm" type="video/ogg"/>	
+					    <source src="http://redwood-videos.s3.amazonaws.com/redwood-roman-2.mp4" type="video/mp4"/> 	
+				    </video>
+<!-- 				</div> -->
+			 </div>
 
-<!-- 		<div class="contain-to-grid sticky">
-		  <nav class="" data-topbar role="navigation" data-options="sticky_on: large">
-	    	<%= link_to "Businesses", business_path, class: "navbar-btn" %>
-			<%= link_to "Schools", school_path, class: "navbar-btn" %>
-			<%= link_to "Individuals", individual_path, class: "navbar-btn" %>			    
-		  </nav>
-		</div> -->
-		   
-	</div>
-	
-	<div class="container">
-		<div class="row">	
-			<div class="large-12 columns">
-				<h3> 
-					  A framework of specific challenges and interactive personal inquiries designed to foster essential leadership skills.
-				</h3>
+
+		<div class="video-overlay">
+			<div class="header center">
+			  	<h1><%= link_to "growBig", signup_path, class: "rp-button" %></h1>
+			  	<h2 class="">A framework of specific challenges and interactive personal inquiries designed to foster essential leadership skills.</h2>
+					<div data-magellan-expedition="fixed">
+					<!--     <dd data-magellan-arrival="build"><a href="#build"></a></dd>
+					 --><dd data-magellan-arrival="js">	 
+						 	<div class="links">
+						    	<%= link_to "Businesses", business_path, class: "navbar-btn" %>
+								<%= link_to "Schools", school_path, class: "navbar-btn", id: "middle" %>
+								<%= link_to "Individuals", individual_path, class: "navbar-btn link" %>
+							</div>								
+						</dd>
+					</div>
+
+		<!-- 		<div class="contain-to-grid sticky">
+				  <nav class="" data-topbar role="navigation" data-options="sticky_on: large">
+			    	<%= link_to "Businesses", business_path, class: "navbar-btn" %>
+					<%= link_to "Schools", school_path, class: "navbar-btn" %>
+					<%= link_to "Individuals", individual_path, class: "navbar-btn" %>			    
+				  </nav>
+				</div> -->   
+
 			</div>
+						<%= image_tag "scroll-down.svg", class: "scrolldown" %> 			
 		</div>
-	</div>
+
 </section>
 
 
@@ -63,12 +69,6 @@
 			<h2>Proven concepts.<br>Expert facilitation. <br>Practical Application. </h2>
 		</div>
 	</section>
-
-<a name="arrival"></a>
-<h3 data-magellan-destination="arrival">Arrival</h3>
-
-<a name="destination"></a>
-<h3 data-magellan-destination="destination">Destination</h3>
 
 	<div class="container">
 		<div class="row">
