@@ -1,7 +1,6 @@
 /* mixins, variables, etc. */
 @import url('//bourbon.io/');
 @import url('//fonts.googleapis.com/css?family=Quicksand:300,400,700');
-@import url('//fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700');
 @import url('//fonts.googleapis.com/css?family=Lato:300,400,700,900');
 
 
@@ -172,7 +171,7 @@ a {
   background-color: rgba(0,0,0,0.4);
 }
 .landing-video {
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 100%;
   z-index: 0;
