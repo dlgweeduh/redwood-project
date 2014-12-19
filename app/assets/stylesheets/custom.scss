@@ -1,53 +1,30 @@
 /* mixins, variables, etc. */
-@import url('//bourbon.io/');
-@import url('//fonts.googleapis.com/css?family=Lato:300,400,700');
-@import url('//fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import "bourbon";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "settings";
 
-
-
-body {
-  font-family: 'Lato', serif;
+/* Selection colours (easy to forget) */
+::selection {
+  background: #404040;
+  color: #FFF;
 }
-
-
-$font-thin: 300; 
-$primary-font: 'Lato';
-$qs-regular: 'Lato';
-$qs-light: 'Lato';
-$qs-bold: 'Lato';  
-$open-sans-regular: 'Lato';
-$lato: 'Lato';
-
-$light: 300;
-$heavy: 700;
-$regular: 400;
-
-$primary-font: 'Lato';
-$qs-regular: 'Lato';
-$qs-light: 'Lato';
-$qs-bold: 'Lato';  
-
-$red-transp: rgba(232,110, 52, 0.9); //#e76e33 
-$blue-transp:rgba(134, 196, 208, 0.9); //#85c3cf
-$yellow-transp: rgba(194, 203, 32, 0.9); //#c2ca20
-
-$red: #e76e33;
-$blue: #85c3cf;
-$yellow: #c2ca20;
-$white: #fff;
-$black: #404040;
-$clear: rgba(0,0,0,0);
-
-$transpgray: rgba(0,0,0,0.7);
-
-
-$space: 2.7em; 
-$fast: color 0.1s ease;
+::-moz-selection {
+  background: #ff6633;
+  color: #FFF;
+}
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+}
+
+@mixin background-size {
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 @mixin selection {
@@ -73,11 +50,12 @@ $fast: color 0.1s ease;
 
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
-  padding-top: 60px;
   font-family: $primary-font, sans-serif;
+  overflow-x: hidden;
 }
 
 section {
@@ -88,12 +66,6 @@ textarea {
   resize: vertical;
 }
 
-.center {
-  text-align: center;  
-  h1 {
-    margin-bottom: 10px;
-  }
-}
 
 /* typography */
 
@@ -105,7 +77,6 @@ h1 {
   font-size: 3em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 h2 {
@@ -116,52 +87,190 @@ h2 {
 
 p {
   font-size: 1.1em;
-  line-height: $space;
   text-align: justify;
 }
 a {
-  text-decoration: none;
-  color:$red;
-  font-weight: 300;
   &:hover {
     text-decoration: none;
-    color: $yellow;
+    color: $lightgrey;
   }
 }
 
 
 /* Headers Styles */
 
+.navbar-inverse {
+  min-height: 60px;
+  border: none;
+}
+.collapse .navbar-collapse {
+  background-color: $clear;
+}
+.navbar-inverse .navbar-nav {
+    margin-right: 30px;
+    > li {
+        > a {
+            font-family: 'ProximaNova', sans-serif;
+            font-size:18px;
+            color: $white;
+            &:hover {
+                  color: #fff;
+            }
+            @media screen and(min-width: 768px) and (max-width: 885px)   {
+                font-size: 16px;
+            }
 
-.header {
-  color: $white;
-  font-family: $qs-bold;
-  font-weight: $regular;
-  margin-top: 15%;
+        }
+
+        .main-apply-button {
+            border:1px solid #43c3d9;
+            border-radius:0px;
+            margin: 17px 0 0 0;
+            min-width:100px;
+            height: 35px;
+            line-height: 35px;
+            padding: 0;
+            color:#fff;
+            font-size:16px;
+            text-transform:uppercase;
+            
+            @include transition((all, 200ms));
+
+            &:hover {
+                background-color: #43c3d9;
+            }     
+        }
+    } 
+}
+
+/* Navbar List Items Hover Effect  */
+
+
+/* Effect on active navbar links  */
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+   background-color: transparent;
+}
+
+/* Navbar vertical alignment  */
+
+.navbar-nav > li > a {
+   margin-top: 10px;
+}
+
+/* Brand Hover Color */
+.navbar-brand {
+  margin: -14px 0 0 0;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+   background-color: transparent;
+}
+
+/* Drop Down Nav */
+
+.navbar-inverse .navbar-nav>.open>a, 
+.navbar-inverse .navbar-nav>.open>a:hover, 
+.navbar-inverse .navbar-nav>.open>a:focus {
+   background-color: transparent;
+  
+}
+.navimg{
+   width:50px;
+   background-color:black;
+   border-radius:50px;
+   margin-right:5px;
+}
+
+.dropdown-menu {
+   background-color: rgba(0, 0, 0, 0.7);
+   font-family: 'ProximaNovaThin', sans-serif;
+   font-size: 18px;
+   min-width:200px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  margin-top:10px;
+}
+.dropdown-menu>li>a {
+   color: $white;
+   border-top: solid 2px transparent;
+   line-height: 40px;
+}  
+
+.dropdown-menu>li>a:hover {
+   color: $lightgrey;
+   background-color:transparent;
+   // border-top: solid 2px #43c3d9;
+}  
+
+.navbar-subtitle{
+  text-transform:uppercase;
+  font-family: 'ProximaNovaBold', sans-serif;
+}
+
+/* Mobile Toggle Icon Color */
+
+.navbar-inverse .navbar-toggle .icon-bar {
+   background-color: white;
+} 
+
+.dropdown-menu > .active > a,
+ .dropdown-menu > .active > a:hover,
+  .dropdown-menu > .active > a:focus {
+   background-color: transparent;
+}
+
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
   &:hover {
     @include opacity(0.8);
-    color: $white;
-  }
-  h2 {
-    color: $white;
-    font-family: $qs-regular;
-    margin: 0 25% 0 25%;
-  }
-  h1 a {
-    font-size: 5rem;
-    color: $white;
-    font-family: $qs-regular;
-  }
-  .scrolldown {
-    display: block;
-    padding-top: 20%;
+    @include transition($fast);
   }
 }
 
-.rp-button {
+.landing-links a{
+  color: $white;
+  padding: 10px;
+  font-size: 2.5rem;
+  @include transition($fast);
+  &:hover{
+    @include opacity(0.8);
+    color: $lightgrey;
+  }
+}
+
+.landing {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background-repeat: no-repeat no-repeat;
+  background-color: $lightgrey;
+  @include background-size;
+  @media screen and (max-width: 480px) {
+     height:400px;
+     background-image: url('redwoods.jpg');
+  }
+}
+.scrolldown {
+  display: block;
+  padding-top: 5%;
+  margin: 0 auto;
+}
+.primary-button {
   padding: 20px;
   border: 5px solid $white;
-  margin-bottom: 100px;
+  color: $white;
 }
 .video-overlay {
   position: absolute;
@@ -169,8 +278,32 @@ a {
   width: 100%;
   top: 0;
   background-color: rgba(0,0,0,0.4);
+  color: $white;
+  .overlay-text {
+    margin-top: 15%;
+    padding: 3rem 0 3rem 0;
+    letter-spacing: $letter-spacing;
+    h2 {
+      padding: 4rem 0 4rem 0;
+      margin: 0 10% 0 10%;
+      letter-spacing: $letter-spacing;
+      line-height: $spacer;
+        }
+    .middle {
+      border-left: 3px solid $white;
+      border-right: 3px solid $white;
+    } 
+  }
+  h1 {
+    color: white;
+  }
 }
-.landing-video {
+.landing video{
+  width:100%;
+  height:auto;
+}
+
+.landing {
   position: relative;
   text-align: center;
   width: 100%;
@@ -180,76 +313,103 @@ a {
 }
 
 
-/* header */
+/* Sections */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  &:hover {
-    opacity: 0.8;
-    @include transition($fast);
-  }
+.focus {
+  margin: 0 0 50px 0px;
+  background-color: #FFFFFF;
+}
+.focus h3 {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #808080;
+  color: black;
+  font-size: 30px;
+  letter-spacing: $letter-spacing;
+  text-align: left;
+  padding: 0 0 20px 0;
 }
 
-.top-bar-section .right a {
-  border: none;
-  background: $clear;
-  font-weight: $light;
-  font-family: $qs-regular;
-  font-weight: $light;  
+
+/* Benefits */
+
+.benefits {
+  text-align: left;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  background: $lightgrey url('blueprint-11.jpg') repeat left top;
+  background-size: 11px 11px;
 }
 
-.top-bar {
-  li a {
-    color: white;
-    font-weight: $light;
-    font-family: $qs-regular;
-    font-weight: $light;
-    @include transition($fast);
-    &:hover {
-      color: $red;
-    }
-  }
- .dropdown-menu {
- } 
-}
-
-.navbar-btn {
-  color: $white;
-  padding: 10px;
-  line-height: $space;
-  font-family: $qs-regular;
-  font-weight: $light;
-  font-size: 2rem;
-  @include transition($fast);
-  &:hover{
-    @include opacity(0.8);
-  }
-}
-#middle {
-  border-left: 3px solid $white;
-  border-right: 3px solid $white;
-}
-
-.landing {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
+.separator {
+  background-image: url("http://redwood-images.s3.amazonaws.com/student-perspective.jpg");
+  background-size: 100%;
+  background-position: 0 -25px;
   background-repeat: no-repeat no-repeat;
-  background-position: -50px 0;
-  background-color: $transpgray;
-  // background-image: url(image-path('redwoods.jpg'));
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  min-height: 500px;
+  width: 100%;
+  z-index: 0;
+  border: none;
+  margin-top: 0;
+}
+
+.hero-overlay {
+  color: $white;
+  margin: 10% 0 0 5%;
+  text-align: left;
+  h1 {
+    letter-spacing: $letter-spacing;
+    line-height: $spacer;
+    text-align: left;
+  }
 }
 
 
+
+// Carousel
+
+.testimonials{
+  padding:5% 0%;
+  height: 450px;
+  overflow-y: hidden;
+  p{
+    margin-top:15%;
+  }
+
+  .testimonial_name{
+    font-size:18px;
+  }
+
+  .testimonal_date{
+    color:#939393;
+  }
+}
+
+.redwood-testimonial{
+  width:300px;
+  border-radius:300px;
+  margin:0 auto;
+
+  p{
+    padding-top:10%;
+  }
+}
+
+/*Carousel Overrides */
+
+.carousel-indicators li {
+ border: 1px solid #d3d3d3;
+
+}
+
+.carousel-indicators .active {
+  background-color:#d3d3d3;
+}
+
+.carousel-indicators {
+  bottom:-120px;
+}
 
 
 /* footer */
@@ -257,34 +417,53 @@ a {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $red;
-  a {
-    color: gray;
-    &:hover {
-      color: gray;
-    }
-  }
-  small {
-    float: left;
+  background-color: $darkgrey;
+  border-top: 1px solid $medgrey;
+  h1 {
+    text-align: center;
+    color: $white;
   }
   ul {
-    margin: 1em 0;
-    float: right;
     list-style: none;
+  }
+}
+
+.map {
+  padding: 50px 0 50px 0;
+  ul {
     li {
-      margin-left: 15px;
-      display: block;
+      a {
+        color: $medgrey;        
+        font-size: 2rem;
+        line-height: $spacer;
+        &:hover {
+          color: $lightgrey
+        }
+      }
     }
   }
 }
 
-.socialIcon {
-  float: left;
-  img{
-    width: 4em;
+.social {
+  margin: 0 auto;
+  ul {
+    min-width: 300px;
+  }
+  li {
+    display: inline-block;
+    a {
+
+      &:hover {
+        @include transition((all, 200ms));
+        @include opacity(0.7);
+      }
+    }
+    img {
+      width: 100px;
+      padding: 10px;
+    }
   }
 }
-
 
 /* sidebar */
 
@@ -373,908 +552,3 @@ input {
   margin-left: 0;
 }
 
-
-/*~~~~~TIMELINE ~~~*/
-
-// colors
-$link: #acb7c0; // anchor tags
-$main-text: #7f8c97; // main text
-
-// rem fallback - credits: http://zerosixthree.se/
-
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
-}
-
-// border radius
-
-@mixin border-radius($radius:.25em) {
-  border-radius: $radius;
-}
-
-// breakpoints
-   
-$S:     320px;   
-$M:     768px;     
-$L:     1170px;     
-
-// media queries
-
-@mixin MQ($canvas) {
-  @if $canvas == S {
-   @media only screen and (min-width: $S) { @content; } 
-  }
-  @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; } 
-  }
-  @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; } 
-  }
-}
-
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-  @include box-sizing;
-}
-
-
-a {
-  color: $link;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-
-/* -------------------------------- 
-
-Modules - reusable parts of our design
-
--------------------------------- */
-
-
-.cd-timeline {
-  font-family: $qs-regular;
-}
-.cd-container { /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
-  max-width: $L; // breakpoints inside partials > _layout.scss
-  margin: 0 auto;
-
-  &::after { /* clearfix */
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-
-header {
-  height: 200px;
-  line-height: 200px;
-  text-align: center;
-  background: $blue;
-
-  h1 {
-    color: $black;
-    @include font-size(18px);
-  }
-
-  @include MQ(L) {
-    height: 300px;
-    line-height: 300px;
-
-    h1 {
-      @include font-size(24px);
-    }
-  }
-}
-
-#cd-timeline {
-  position: relative;
-  padding: 2em 0;
-  margin: {
-    top: 2em;
-    bottom: 2em;
-  }
-
-  &::before {
-    /* this is the vertical line */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 18px;
-    height: 100%;
-    width: 4px;
-    background-color: $blue;
-  }
-
-  @include MQ(L) {
-    margin: {
-      top: 3em;
-      bottom: 3em;
-    }
-
-    &::before {
-      left: 50%;
-      margin-left: -2px;
-    }
-  }
-}
-
-.cd-timeline-block {
-  position: relative;
-  @include clearfix;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @include MQ(L) {
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.cd-timeline-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px $red, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
-
-  img {
-    display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
-  }
-
-  &.cd-picture {
-    background: $yellow;
-  }
-
-  &.cd-movie {
-    background: $red;
-  }
-
-  &.cd-location {
-    background: $blue;
-  }
-
-  @include MQ(L) {
-    width: 60px;
-    height: 60px;
-    left: 50%;
-    margin-left: -30px;
-
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-
-    .cssanimations &.is-hidden {
-      visibility: hidden;
-    }
-
-    .cssanimations &.bounce-in {
-      visibility: visible;
-      @include animation(cd-bounce-1 .6s);
-    }
-  }
-}
-
-@include keyframes(cd-bounce-1) {
-  0% {
-    opacity: 0;
-    @include transform(scale(.5));
-  }
-
-  60% {
-    opacity: 1;
-    @include transform(scale(1.2));
-  }
-
-  100% {
-    @include transform(scale(1));
-  }
-}
-
-.cd-timeline-content {
-  position: relative;
-  margin-left: 60px;
-  @include border-radius;
-  padding: 1em;
-  @include clearfix;
-
-  h2 {
-    color: $blue;
-  }
-
-  p, .cd-read-more, .cd-date {
-    @include font-size(13px);
-  }
-
-  .cd-read-more, .cd-date {
-    display: inline-block;
-  }
-
-  p {
-    margin: 1em 0;
-    line-height: 1.6;
-  }
-
-  .cd-read-more {
-    float: right;
-    padding: .8em 1em;
-    background: $link;
-    color: $red;
-    @include border-radius;
-
-    .no-touch &:hover {
-      // background-color: lighten($link, 5%);
-    }
-  }
-
-  .cd-date {
-    float: left;
-    padding: .8em 0;
-    opacity: .7;
-  }
-
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 16px;
-  //   right: 100%;
-  //   height: 0;
-  //   width: 0;
-  //   border: 7px solid transparent;
-  //   border-right: 7px solid $blue;
-  // }
-
-  @include MQ(M) {
-    h2 {
-      @include font-size(20px);
-    }
-
-    p {
-      @include font-size(16px);
-    }
-
-    .cd-read-more, .cd-date {
-      @include font-size(14px);
-    }
-  }
-
-  @include MQ(L) {
-    margin-left: 0;
-    padding: 1.6em;
-    width: 45%;
-
-    &::before {
-      top: 24px;
-      left: 100%;
-      border-color: transparent;
-      border-left-color: $red;
-    }
-
-    .cd-read-more {
-      float: left;
-    }
-
-    .cd-date {
-      position: absolute;
-      width: 100%;
-      left: 122%;
-      top: 6px;
-      @include font-size(16px);
-    }
-
-    .cd-timeline-block:nth-child(even) & {
-      float: right;
-
-      &::before {
-        top: 24px;
-        left: auto;
-        right: 100%;
-        border-color: transparent;
-        border-right-color: $black;
-      }
-
-      .cd-read-more {
-        float: right;
-      }
-
-      .cd-date {
-        left: auto;
-        right: 122%;
-        text-align: right;
-      }
-    }
-
-    .cssanimations &.is-hidden {
-      visibility: hidden;
-    }
-
-    .cssanimations &.bounce-in {
-      visibility: visible;
-      @include animation(cd-bounce-2 .6s);
-    }
-  }
-}
-
-@include MQ(L) {
-  /* inverse bounce effect on even content blocks */
-  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
-    @include animation(cd-bounce-2-inverse .6s);
-  }
-}
-
-@include keyframes(cd-bounce-2) {
-  0% {
-    opacity: 0;
-    @include transform(translateX(-100px));
-  }
-
-  60% {
-    opacity: 1;
-    @include transform(translateX(20px));
-  }
-
-  100% {
-    @include transform(translateX(0));
-  }
-}
-
-@include keyframes(cd-bounce-2-inverse) {
-  0% {
-    opacity: 0;
-    @include transform(translateX(100px));
-  }
-
-  60% {
-    opacity: 1;
-    @include transform(translateX(-20px));
-  }
-
-  100% {
-    @include transform(translateX(0));
-  }
-}
-
-
-// colors
-
-$main-text: $white; // main text
-$link: #6cac70; // anchor tags
-$background: $white; // body background color
-
-$color-1: $red; // green dark
-$color-2: $blue; // green darker
-$color-3: $white; // green light
-
-// fonts 
-
-$primary-font: $lato;
-
-// z-index 
-
-$secondary-nav: 1;
-$content-zindex: 2;
-$header-zindex: 3;
-
-// header height 
-
-$header-S: 50px;
-$header-M: 70px;
-
-// rem fallback - credits: http://zerosixthree.se/
-
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
-}
-
-// center vertically and/or horizontally an absolute positioned element
-
-@mixin center($xy:xy) {
-  @if $xy == xy {
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    @include transform(translateX(-50%) translateY(-50%));
-  }
-  @else if $xy == x {
-    left: 50%;
-    right: auto;
-    @include transform(translateX(-50%));
-  }
-  @else if $xy == y {
-    top: 50%;
-    bottom: auto;
-    @include transform(translateY(-50%));
-  }
-}
-
-// border radius
-
-@mixin border-radius($radius:.25em) {
-  border-radius: $radius;
-}
-
-// breakpoints
-
-$S:     320px;   
-$M:     768px;     
-$L:     1170px;     
-
-// media queries
-
-@mixin MQ($canvas) {
-  @if $canvas == S {
-   @media only screen and (min-width: $S) { @content; } 
-  }
-  @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; } 
-  }
-  @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; } 
-  }
-}
-
-// super light grid - it works with the .cd-container class inside style.scss
-
-@mixin column($percentage, $float-direction:left) {
-  width: 100% * $percentage;
-  float: $float-direction;
-}
-
-
-
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*, *:after, *:before {
-  @include box-sizing;
-}
-
-html, body {
-  /* you need to set this to assign to the main element a min height of 100% */
-  height: 100%;
-}
-
-body {
-  font: {
-    size: 100%;
-    family: $primary-font; // variables inside partials > _variables.scss
-  }
-  color: $main-text;
-  background-color: $background;
-}
-
-a {
-  color: $link;
-  text-decoration: none;
-}
-
-/* -------------------------------- 
-
-Modules - reusable parts of our design
-
--------------------------------- */
-
-.cd-img-replace { /* replace text with a background-image */
-  display: inline-block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-/* -------------------------------- 
-
-Main components 
-
--------------------------------- */
-
-.cd-main-content {
-  /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
-  min-height: 100%;
-  position: relative;
-  background-color: $background;
-  z-index: $content-zindex;
-  
-  //we assign a top padding since the header is in position absolute or fixed
-  padding-top: $header-S;
-
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-
-  @include transition-property(transform);
-  @include transition-duration(.4s);
-
-  &.lateral-menu-is-open {
-    /* translate to show the lateral menu - all content needs to be put in the .cd-main-content to translate*/
-    @include transform(translateX(-260px));
-  }
-
-  @include MQ(M) {
-    padding-top: $header-M;
-  }
-}
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: $header-S;
-  width: 100%;
-  background: $color-1;
-  z-index: $header-zindex;
-
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-
-  @include transition-property(transform);
-  @include transition-duration(.4s);
-
-  &.lateral-menu-is-open {
-    /* translate to show the lateral menu */
-    @include transform(translateX(-260px));
-  }
-  
-  //assign this class to the header if you want a fixed navigation
-  &.is-fixed {
-    position: fixed;
-  }
-
-  @include MQ(M) {
-    height: $header-M;
-  }
-}
-
-#cd-logo {
-  display: block;
-  float: left;
-  margin: 12px 0 0 20px;
-
-  img {
-    display: block;
-  }
-
-  @include MQ(M) {
-    margin: 22px 0 0 30px;
-  }
-}
-
-#cd-top-nav {
-  position: absolute;
-  top: 0;
-  right: 120px;
-  height: 100%;
-
-  display: none;
-
-  ul {
-    height: 100%;
-    padding-top: 18px;
-  }
-
-  li {
-    display: inline-block;
-    margin-right: 1em;
-  }
-
-  a {
-    display: inline-block;
-    padding: .5em;
-    color: #FFF;
-    text-transform: uppercase;
-    font-weight: 600;
-
-    &.current {
-      background-color: $color-2;
-    }
-
-    .no-touch &:hover {
-      color: rgba(#FFF, .7);
-    }
-  }
-
-  @include MQ(M) {
-    display: block;
-  }
-}
-
-#cd-menu-trigger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 50px;
-  background-color: lighten($color-1, 10%);
-
-  .cd-menu-text {
-    height: 100%;
-
-    text-transform: uppercase;
-    color: #FFF;
-    font-weight: 600;
-
-    display: none;
-  }
-
-  .cd-menu-icon {
-    /* this span is the central line in the menu menu */
-    display: inline-block;
-    position: absolute;
-    @include center; // mixin inside partials > _mixings.scss
-    width: 18px;
-    height: 2px;
-    background-color: #FFF;
-    
-    /* these are the upper and lower lines in the menu menu */
-    &::before, &:after {
-      content: '';
-      width: 100%;
-      height: 100%; 
-      position: absolute;
-      background-color: inherit;
-      left: 0;
-    }
-    
-    &::before {
-      bottom: 5px;
-    }
-
-    &::after {
-      top: 5px;
-    }
-  }
-
-  &.is-clicked {
-    .cd-menu-icon {
-      background-color: rgba(#FFF, 0);
-
-      &::before, &::after {
-        background-color: rgba(#FFF, 1);
-      }
-
-      &::before {
-        bottom: 0;
-        @include transform(rotate(45deg));
-      }
-
-      &::after {
-        top: 0;
-        @include transform(rotate(-45deg));
-      }
-    }
-  }
-
-  @include MQ(M) {
-    width: 110px;
-    padding-left: 1.25em;
-
-    .cd-menu-text {
-      display: inline-block;
-      line-height: $header-M;
-    }
-
-    .cd-menu-icon {
-      left: auto;
-      right: 1.25em;
-      @include transform(translateX(0));
-    }
-  }
-}
-
-#cd-lateral-nav {
-  position: fixed;
-  height: 100%;
-  right: 0;
-  top: 0;
-  visibility: hidden;
-
-  /* the secondary navigation is covered by the main element */
-  z-index: $secondary-nav; // see partials > _variables.scss
-
-  width: 260px;
-  background-color: $color-2;
-
-  overflow-y: auto;
-
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-
-  -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
-  -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
-  transition: transform .4s 0s, visibility 0s .4s;
-
-  /* this creates the subtle slide in animation of the navigation */
-  @include transform(translateX(80px));
-
-  .cd-navigation {
-    margin: 10px 0 16px;
-  }
-
-  .sub-menu {
-    padding: 0 10px 20px 15px;
-    display: none;
-  }
-
-  a {
-    display: block;
-    line-height: 2em;
-    padding: 0 16px 0 32px;
-    color: $color-3;
-
-    &.current {
-      background-color: lighten($color-2, 10%);
-      color: #FFF;
-    }
-
-    .no-touch &:hover {
-      color: #FFF;
-    }
-  } 
-
-  @include MQ(M) {
-    .cd-navigation {
-      margin: 20px 0;
-    }
-  }
-
-  &.lateral-menu-is-open {
-    @include transform(translateX(0));
-    visibility: visible;
-    -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
-    -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
-    transition: transform .4s 0s, visibility 0s 0s;
-
-    /* smooth the scrolling on touch devices - webkit browsers */
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-
-/* style menu items which have a submenu  */
-#cd-lateral-nav .item-has-children > a {
-  position: relative;
-  text-transform: uppercase;
-  font-weight: 600;
-
-  /* this is the right arrow to show that the item has a submenu  */
-  &::after {
-    content: '';
-    display: block;
-    height: 11px;
-    width: 8px;
-    position: absolute;
-    @include center(y);
-    right: 1em;
-    background: url('../img/cd-arrow.svg') no-repeat center center;
-    background-size: 8px 11px;
-
-    @include transition-property(transform);
-    @include transition-duration(.2s);
-  }
-
-  &.submenu-open::after {
-    @include transform(translateY(-50%) rotate(90deg));
-
-  }
-}
-
-#cd-lateral-nav .socials {
-  @include clearfix;
-  padding: 0 32px;
-
-  a {
-    height: 32px;
-    width: 32px;
-    float: left;
-    padding: 0;
-    background-image: url('../img/cd-socials.svg');
-    background-repeat: no-repeat;
-    background-size: 128px 64px;
-    background-color: #FFF;
-    margin-right: .5em;
-    @include border-radius;
-
-    &.cd-twitter {
-      background-position: 0 0;
-    }
-
-    &.cd-github {
-      background-position: -32px 0;
-    }
-
-    &.cd-facebook {
-      background-position: -64px 0;
-    }
-
-    &.cd-google {
-      background-position: -96px 0;
-    }
-
-    .no-touch &:hover {
-      background-color: $color-1;
-
-      &.cd-twitter {
-        background-position: 0 -32px;
-      }
-
-      &.cd-github {
-        background-position: -32px -32px;
-      }
-
-      &.cd-facebook {
-        background-position: -64px -32px;
-      }
-
-      &.cd-google {
-        background-position: -96px -32px;
-      }
-    }
-  }
-}

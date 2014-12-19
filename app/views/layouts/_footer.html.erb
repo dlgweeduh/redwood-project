@@ -1,32 +1,36 @@
-<footer class="footer">
-  <div class="row">
-    <div class="col-sm-12">
 
-      <nav>
-        <div class="col-sm-3">      
-          <ul>
-            <li><%= link_to "Home",   root_path %></li>
-            <li><%= link_to "School",   school_path %></li>
-            <li><%= link_to "Business", contact_path %></li>
-            <li><%= link_to "Individuals",   individual_path %></li>
-          </ul>
+
+  <footer>             
+          <h1 class="">Talk to us</h1>
+
+        <div class="map">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">      
+                <ul>
+                  <li><%= link_to "Home",   root_path %></li>
+                  <li><%= link_to "School",   school_path %></li>
+                  <li><%= link_to "Business", contact_path %></li>
+                  <li><%= link_to "Individuals",   individual_path %></li>
+                </ul>
+              </div>
+              <div class="col-lg-4">              
+                <ul>
+                  <li><%= link_to "About",   about_path %></li>
+                  <li><%= link_to "Contact", contact_path %></li>
+                  <li><a href="http://redwood-project.com/wordpress/">Blog</a></li>
+                </ul>
+              </div>
+              
+              <div class="social">  
+                <ul>
+                  <li><%= link_to image_tag("twitter.png", alt: "Twitter"), 'https://twitter.com/RedwoodProject'%></li>     
+                  <li><%= link_to image_tag("facebook.png", alt: "facebook"), 'https://www.facebook.com/pages/The-Redwood-Project/159162924097944"><i class="icon-facebook'%></li>               
+                  <li><%= link_to image_tag("linkedin.png", alt: "LinkedIn"), 'http://ca.linkedin.com/pub/scott-m-malcolm/25/785/1b7'%></li> 
+                </ul>
+              </div>  
+                          
+            </div>
+          </div>
         </div>
-        <div class="col-sm-3">              
-          <ul>
-            <li><%= link_to "About",   about_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
-            <li><a href="http://redwood-project.com/wordpress/">Blog</a></li>
-          </ul>
-        </div>  
-        <div class="col-sm-3">              
-          <ul>
-            <li class= "socialIcon"><%= link_to image_tag("twitter.png", alt: "Twitter"), 'https://twitter.com/RedwoodProject'%></li>     
-            <li class= "socialIcon"><%= link_to image_tag("facebook.png", alt: "facebook"), 'https://www.facebook.com/pages/The-Redwood-Project/159162924097944"><i class="icon-facebook'%></li>               
-            <li class= "socialIcon"><%= link_to image_tag("linkedin.png", alt: "LinkedIn"), 'http://ca.linkedin.com/pub/scott-m-malcolm/25/785/1b7'%></li>             
-          </ul>
-        </div>          
-      </nav>
-    </div>
-            <a href="http://www.redwood-project.com/">&#169; Redwood Project 2014</a>
-  </div>
-</footer>
+  </footer>

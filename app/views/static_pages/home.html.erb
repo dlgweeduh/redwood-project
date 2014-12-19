@@ -1,0 +1,159 @@
+<%= render 'layouts/navbar' %>  
+
+<section class="landing">
+		<video autoplay="true">
+		    <source src="http://redwood-videos.s3.amazonaws.com/redwood-roman-fogg.webm" type="video/ogg"/>	
+		    <source src="http://redwood-videos.s3.amazonaws.com/redwood-roman-2.mp4" type="video/mp4"/> 	
+	    </video>		
+		<div class="video-overlay">
+				<div class="overlay-text">  	
+				  	<h1><%= link_to "#growBig", signup_path, class: "primary-button" %></h1>
+				  	<h2>A framework of specific challenges and interactive personal inquiries designed to foster essential leadership skills.</h2>
+				 	<div class="landing-links">
+				    	<%= link_to "Businesses", business_path %>
+						<%= link_to "Schools", school_path, class: "middle" %>
+						<%= link_to "Individuals", individual_path%>
+					</div>				
+				</div>
+			<%= image_tag "scroll-down.svg", class: "scrolldown" %>
+		</div>
+
+</section>
+
+
+	<section class="focus">
+		<div class="container">
+			<div class="row">	
+				<div class="col-sm-6 col-sm-offset-3">
+					<h3>Character &amp Values Forum</h3>
+						<p> Our main product is a highly customized series of workshops designed to foster excellent leadership. The workshop addresses specific needs by building the essential characteristics shared among great leaders. Unique challenges and inquires develop the individual and group <i>at the same time</i>, which then influence the broader culture of the school or organization at large. Completed in half-day, full-day or 3 month engagements the results are proven and the advocates vocal.</p> 
+				</div>
+			</div>
+			<div class="row">	
+				<div class="col-sm-5">
+					<h3>Speaking</h3>
+						<p>Since launching the business, Redwood’s team of leaders has helped people live more meaningful and fulfilled lives. Drawing on their comprehensive research and first-hand insight, they share Redwood’s collection of tools and relate stories and ideas that are sometimes hilarious, sometimes poignant, and always original. Ask one of our leaders to speak at your next conference, off-site or assembly. </p> 
+				</div>
+				<div class="col-sm-5 col-sm-offset-1">
+					<h3>1-on-1 Mentoring &amp Coaching</h3>
+								<p>Working directly with Managing Director Scott Malcolm is an effective and intensive experience. Meeting the individual at whatever point they may be, Redwood’s unique tools and challenges are deployed to drastically and measurably improve fulfillment, performance and personal relationships. Goals are laid out, challenges made and action taken. Conducted over 6 or 12 one-hour sessions.</p> 
+				</div>			
+			</div>		
+		</div>
+	</section>
+
+
+	<section class="separator">
+		<div class="hero-overlay">
+			<h1>Proven concepts.<br>Expert facilitation. <br>Practical Application. </h1>
+		</div>
+	</section>
+	
+
+	<section class="benefits">
+		<div class="container">
+			<div class="row">
+				<h2 class="center">Project Benefits</h2>
+					<div class="col-sm-6">
+						<h4>Awareness</h4>
+						<p>Effective prioritization and consistent progress comes from a clear understanding of what matters to you. Redwood creates an opportunity to precisely articulate your priorities as well as the decisions required to bring them to life.</p>
+					</div>
+					<div class="col-sm-6">
+						<h4>Connection</h4>
+						<p>Renew your commitment to manage and improve relationships – especially the important or difficult ones. Whether it is nuanced inter-personal relationships with co-workers, or the all-encompassing parent-child team, your Redwood relationship work involves assessment, action and improvement. Teams will be united by championing common goals and building mutual understanding.</p>
+					</div>	
+			</div>
+			<div class="row">
+					<div class="col-sm-6">
+						<h4>Accountability</h4>
+						<p>Redwood will push you to make choices that hold yourself to a higher standard. You will become accountable to the priorities you have announced. Redwood will create a community of people who will champion your accomplishments, and hold you responsible to your commitments.</p>
+					</div>
+					<div class="col-sm-6">
+						<h4>Resiliency</h4>
+						<p>Not only is it impossible to live a life without setbacks frustration and failure, we wouldn’t want it anyway. Redwood provides tools for you to rebound quickly from setbacks by managing the internal dialogues that play in your head.</p>
+					</div>	
+			</div>	
+			<div class="row">
+					<div class="col-sm-6">
+						<h4>Fulfillment</h4>
+						<p>By aligning your values with your actions, you take control of your life with simple but rigorous strategies. This allows you to take ownership of what matters to you and open a world of options.</p>
+					</div>
+					<div class="col-sm-6">
+						<h4>Engagement</h4>
+						<p>Once you have articulated the personal elements that define you, a customized plan to deploy these elements in targeted, tactical ways is created. Engagement with your own emotions, goals, family, team and objectives is a direct result of this Action Plan.</p>
+					</div>	
+			</div>		
+		</div>
+	</section>
+
+	<section class="testimonials">
+	  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	        <!-- Indicators -->
+	      <ol class="carousel-indicators">
+	        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+	        </li>
+	        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	      </ol>
+
+	      <!-- Wrapper for slides -->
+	    <div class="carousel-inner">
+	      <div class="item active"><!-- class of active since it's the first item -->
+	        <div class="container"> 
+	           <div class="row">
+	               <div class="col-md-6">
+	                   <p>Every session, every activity, created a heightened sense of teamwork between us and improved our performances academically, athletically and socially. Very rarely in our busy school routines do we as students commit the time needed to really appreciate all that is going on in our lives. In addition to clearly articulating what I bring to the table and taking risks and pushing myself in ways I never would have otherwise this project taught me that every conversation is an opportunity to learn something new about someone. Our time at Redwood was such an incredible bonding experience.
+	                    <br>
+	                    <br>
+	                    <span class="testimonial_name">Alexander Cupillari</span>,
+	                    <span class="testimonial_date">Redwooder, 2013</span>
+	                  </p>
+	          
+	              </div>
+	              <div class="col-md-6">
+	                <%= image_tag "", :class => "redwood-testimonial img-responsive"%>
+	              </div>  
+	          </div>
+	        </div> 
+	      </div>
+
+	      <div class="item">
+	         <div class="container"> 
+	            <div class="row">
+	                <div class="col-md-6">
+	                    <p>What has struck me most about my son’s participation in Redwood is it enabled our son Sash to confidently make some of the most important choices in his life, such as what university he chose to attend this fall. What has become clear is that he now knows exactly what he values. What’s more is he is making choices and setting priorities that reflect those values. His family comes first, followed by his commitment to school and then sports. We believe we have Redwood to thank for this.
+	                      <br>
+	                      <br>
+	                      <span class="testimonial_name">Jay Malowany</span>,
+	                      <span class="testimonial_date"> Parent, 2013</span>
+	                    </p>
+	               </div>
+	               <div class="col-md-6">
+	                      <%= image_tag "", :class => "redwood-testimonial img-responsive"%>
+	              </div>  
+	           </div>
+	        </div> 
+	    </div>
+	    <div class="item">
+	       <div class="container"> 
+	          <div class="row">
+	                <div class="col-md-6">
+	                    <p>Redwood’s solutions are well suited to my team. Clear, engaging, practical and focused, the team delivers something fresh and essential from which every business and brand can benefit. I’m looking forward to working with them more.
+	                      <br>
+	                      <br>
+	                      <span class="testimonial_name">Drew Phillips</span>,
+	                      <span class="testimonial_date">Category Marketing Manager</span>
+	                    </p>
+	                </div>
+	                <div class="col-md-6">
+	                     <%= image_tag "", :class => "redwood-testimonial img-responsive"%>
+	                </div>  
+	          </div>
+	        </div> 
+	      </div>
+	    </div><!-- /.carousel-inner -->  
+	  </div>
+	</section>
+
+</div> <!-- / END CONTAINER -->
+</section> <!-- / END TESTIMONIAL SECTION -->
