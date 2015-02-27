@@ -7,21 +7,29 @@
 	    </video>		
 		<div class="video-overlay">
 				<div class="overlay-text">  	
-				  	<h1><%= link_to "#growBig", signup_path, class: "primary-button" %></h1>
-				  	<h2>A framework of specific challenges and interactive personal inquiries designed to foster essential leadership skills.</h2>
-				 	<div class="landing-links">
-				    	<%= link_to "Businesses", business_path %>
-						<%= link_to "Schools", school_path, class: "middle" %>
-						<%= link_to "Individuals", individual_path%>
-					</div>				
+					<div class="container">
+						<div class="col-sm-8 col-sm-offset-2">
+							<div class="row">
+							  	<h1><%= link_to "#growBig", '#' %></h1>
+							  	<h2>A framework of specific challenges and interactive personal inquiries designed to foster essential leadership skills.</h2>
+							 	<div class="landing-links">
+							    	<%= link_to "Businesses", business_path %>
+									<%= link_to "Schools", school_path, class: "middle" %>
+									<%= link_to "Individuals", individual_path%>
+								</div>		
+							</div>
+						</div>
+					</div>		
 				</div>
-			<%= image_tag "scroll-down.svg", class: "scrolldown" %>
 		</div>
 
 </section>
+      <a class="arrow-wrap" href="#focus">
+        <span class="arrow"></span>
+        <%= image_tag "scroll-down.svg", class: "floating" %> 
+      </a>
 
-
-	<section class="focus">
+	<section class="focus" id="focus">
 		<div class="container">
 			<div class="row">	
 				<div class="col-sm-6 col-sm-offset-3">

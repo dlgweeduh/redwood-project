@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 
 
-$('a[href*=#]:not([href=#])').click(function() {
+$('a[href*=#]:not([href=#], .accordion-toggle)').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
 	        || location.hostname == this.hostname) {
 
@@ -13,11 +13,11 @@ $('a[href*=#]:not([href=#])').click(function() {
 	           	if ($(".navbar").css("position") == "fixed" ) {
 	             $('html,body').animate({
 	                 scrollTop: target.offset().top-73
-	            }, 1000);
+	            }, 750);
 	         } else {
 	             $('html,body').animate({
 	                 scrollTop: target.offset().q1top
-	            }, 1000);
+	            }, 750);
 	         }
 	            return false;
 	        }

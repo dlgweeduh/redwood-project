@@ -92,8 +92,15 @@ p {
 a {
   &:hover {
     text-decoration: none;
-    color: $lightgrey;
   }
+}
+
+
+// ~*Settings
+
+.center {
+  margin: 0 auto;
+  text-align: center;
 }
 
 
@@ -102,15 +109,12 @@ a {
 .navbar-inverse {
   min-height: 60px;
   border: none;
-}
-.collapse .navbar-collapse {
   background-color: $clear;
 }
 .navbar-inverse .navbar-nav {
     margin-right: 30px;
     > li {
         > a {
-            font-family: 'ProximaNova', sans-serif;
             font-size:18px;
             color: $white;
             &:hover {
@@ -185,7 +189,6 @@ a {
 
 .dropdown-menu {
    background-color: rgba(0, 0, 0, 0.7);
-   font-family: 'ProximaNovaThin', sans-serif;
    font-size: 18px;
    min-width:200px;
 }
@@ -207,7 +210,6 @@ a {
 
 .navbar-subtitle{
   text-transform:uppercase;
-  font-family: 'ProximaNovaBold', sans-serif;
 }
 
 /* Mobile Toggle Icon Color */
@@ -226,9 +228,12 @@ a {
 
 /* header */
 
+header {
+  position: absolute;
+}
 #logo {
   float: left;
-  margin-right: 10px;
+  margin-top: -5px;
   color: $black;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -262,11 +267,29 @@ a {
      background-image: url('redwoods.jpg');
   }
 }
-.scrolldown {
-  display: block;
-  padding-top: 5%;
-  margin: 0 auto;
+
+.arrow-wrap {
+  position:absolute;
+  z-index:1;
+  left:53%;
+  top:-10em;
+  margin-left:-5em;
+  display:block;
+  @media screen and (max-width: 995px) {
+    display: none;
+  }
 }
+
+.arrow {
+  float:left;
+  position:relative;
+  width: 0px;
+  height: 0px;
+
+}
+
+
+
 .primary-button {
   padding: 20px;
   border: 5px solid $white;
@@ -281,21 +304,26 @@ a {
   color: $white;
   .overlay-text {
     margin-top: 15%;
-    padding: 3rem 0 3rem 0;
-    letter-spacing: $letter-spacing;
+    word-spacing: 1px;
+    h1 a {
+      font-size: 80px;
+      padding: 20px;
+      border: 5px solid $white;
+      color: white;
+      font-weight: 300;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     h2 {
       padding: 4rem 0 4rem 0;
       margin: 0 10% 0 10%;
-      letter-spacing: $letter-spacing;
       line-height: $spacer;
         }
     .middle {
       border-left: 3px solid $white;
       border-right: 3px solid $white;
     } 
-  }
-  h1 {
-    color: white;
   }
 }
 .landing video{
@@ -445,9 +473,10 @@ footer {
 }
 
 .social {
-  margin: 0 auto;
+
   ul {
     min-width: 300px;
+    margin: 0 auto;
   }
   li {
     display: inline-block;
@@ -502,53 +531,4 @@ aside {
   margin-top: 15px;
 }
 
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-// .field_with_errors {
-//   @extend .has-error;
-//   .form-control {
-//     color: $state-danger-text;
-//   }
-// }
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
 

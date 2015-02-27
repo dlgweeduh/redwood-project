@@ -1,11 +1,9 @@
 @import url('//fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
 $font-thin: 300; 
-$primary-font: 'Lato';
-$qs-regular: 'Lato';
-$qs-light: 'Lato';
-$qs-bold: 'Lato';  
-$open-sans-regular: 'Lato';
-$lato: 'Lato';
+$primary-font: 'Lato', sans-serif;
+$open-sans-regular: 'Lato', sans-serif;
+$lato: 'Lato', sans-serif;
 
 $darkgrey: #404040;
 $medgrey: #808080;
@@ -26,10 +24,6 @@ $heavy: 700;
 $regular: 400;
 
 $primary-font: 'Lato';
-$qs-regular: 'Lato';
-$qs-light: 'Lato';
-$qs-bold: 'Lato';  
-
 
 $spacer: 1.5em; 
 $letter-spacing: 0.1em;
