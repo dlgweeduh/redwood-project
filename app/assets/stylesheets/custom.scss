@@ -362,7 +362,8 @@ a {
   text-align: left;
   padding-top: 2%;
   padding-bottom: 5%;
-  background: $lightgrey url('blueprint-11.jpg') repeat left top;
+  background: image-url('blueprint-11.jpg');
+  background-repeat: repeat left top;
   background-size: 11px 11px;
 }
 
